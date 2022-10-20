@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
   # Windows 10 configuration.
     config.vm.define "windows10" do |win10|
       win10.vm.box = "Microsoft/EdgeOnWindows10"
+      win10.ssh.forward_agent = true
       win10.vm.network "private_network", ip: "10.0.0.10" do |vb|
         vb.memory = "512"
         vb.cpus = 1
